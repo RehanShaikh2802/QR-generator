@@ -22,9 +22,10 @@ body{
   padding: 20px 25px 0;
   transition: height 0.2s ease;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: center; /* Center align child elements */
 }
 .wrapper.active{
-  height: 530px;
+  height: 580px;
 }
 header h1{
   font-size: 21px;
@@ -81,6 +82,22 @@ header p{
 }
 .qr-code img{
   width: 170px;
+}
+
+.download-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.download-link:hover {
+  background-color: #218838;
 }
 
 @media (max-width: 430px){
