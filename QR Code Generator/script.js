@@ -13,6 +13,7 @@ generateBtn.addEventListener("click", () => {
     qrImg.addEventListener("load", () => {
         wrapper.classList.add("active");
         generateBtn.innerText = "Generate QR Code";
+        createDownloadLink(qrImg.src);
     });
 });
 
@@ -20,5 +21,22 @@ qrInput.addEventListener("keyup", () => {
     if(!qrInput.value.trim()) {
         wrapper.classList.remove("active");
         preValue = "";
+        removeDownloadLink();
     }
 });
+
+function createDownloadLink(qrCodeUrl) {
+    let downloadLink = document.createElement("a");
+    downloadLink.href = qrCodeUrl;
+    downloadLink.download = "qr-code.png";
+    downloadLink.innerText = "Download QR Code";
+    downloadLink.classList.add("download-link");
+    wrapper.appendChild(downloadLink);
+}
+
+function removeDownloadLink() {
+    let downloadLink = wrapper.querySelector(".download-link");
+    if (downloadLink) {
+        downloadLink.remove();
+    }
+}
